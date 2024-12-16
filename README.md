@@ -121,5 +121,5 @@ your_project/ \
     ├── CMakeLists.txt \
     └── LICENSE
 
-License
+# License
 CPPUnitTest is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
