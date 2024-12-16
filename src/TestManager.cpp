@@ -28,14 +28,14 @@ struct TestName {
 };
 
 void print_running_test(const TestName &name, const int group_width, const int test_width) {
-    std::cout << GREEN << std::setw(15) << "[ RUNNING ]" << RESET
+    std::cout << BLUE << std::setw(15) << "[ RUNNING ]" << RESET
               << " Group: " << std::setw(group_width) << name.group_name
               << " | Test: " << std::setw(test_width) << name.test_name << '\n';
 }
 
 void print_test_passed(const TestName &name, const std::chrono::microseconds &duration,
                        const int group_width, const int test_width) {
-    std::cout << BLUE << std::setw(15) << "[   PASSED ]" << RESET
+    std::cout << GREEN << std::setw(15) << "[   PASSED ]" << RESET
               << " Group: " << std::setw(group_width) << name.group_name
               << " | Test: " << std::setw(test_width) << name.test_name
               << " | Duration: " << duration.count() << std::setw(5) << " µs\n";
