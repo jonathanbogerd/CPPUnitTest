@@ -40,7 +40,7 @@ void assert_ne(const T &expected, const T &actual, const std::string &message = 
 }
 
 export template <typename ExceptionType, typename Callable>
-void assert_throw(Callable &&callable, const std::string &message = "") {
+void assert_throw(Callable callable, const std::string &message = "") {
     bool caught = false;
     try {
         callable();

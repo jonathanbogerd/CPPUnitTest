@@ -11,6 +11,6 @@ cmake -S . -B ./build/${BuildMode} \
       -G Ninja
 
 # Build the project with Ninja
-cmake --build ./build/${BuildMode} --config ${BuildMode} -j4
+cmake --build ./build/${BuildMode} --config ${BuildMode}
 mv ./build/${BuildMode}/compile_commands.json ./build
 cd build/${BuildMode}
