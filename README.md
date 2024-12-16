@@ -1,8 +1,8 @@
 # CPPUnitTest
-CPPUnitTest is a lightweight and modern C++ testing framework designed for projects built with C++23 and modules, offering multithreaded test execution, expressive logging, and powerful assertion utilities. With a simple interface and robust features, CPPUnitTest aims to streamline the development and testing process while maintaining readability and performance.
+CPPUnitTest is a lightweight and modern C++ testing framework designed for projects built with C++23,  modules and Clang, offering multithreaded test execution, expressive logging, and powerful assertion utilities. With a simple interface and robust features, CPPUnitTest aims to streamline the development and testing process while maintaining readability and performance.
 
 # Key Features
-- Built with C++23 and modules: Modern, headerless architecture; avoids macros and leverages C++23's power.
+- Built with C++23 and modules: Modern, headerless architecture; avoids exporting macros and leverages C++23's power.
 - Multithreaded test execution: Run tests simultaneously to save time and maximize efficiency.
 - Simple and informative logging: Clear, concise output with links to the location of failed tests.
 - Organize tests into groups and names: Logical structuring of tests for easier management and debugging.
@@ -19,6 +19,9 @@ Add CPPUnitTest to your project:
 add_subdirectory(CPPUnitTest)
 target_link_libraries(your_project PRIVATE CPPUnitTest)
 ```
+
+## Clang Compiler
+CPPUnitTest was built and tested with Clang 19.1.4. Due to differences in module implementation between the compilers, it will probably not work with GCC or MSVC.
 
 ## Writing Tests
 Creating a test is simple. Use the TestRegister class to register your tests with the framework.
