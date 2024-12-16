@@ -14,10 +14,18 @@ Clone the repository into your project:
 ```bash
 git clone https://github.com/jonathanbogerd/CPPUnitTest.git
 ```
-Add CPPUnitTest to your project:
+Add CPPUnitTest to your project with CMake:
 ```cmake
 add_subdirectory(CPPUnitTest)
 target_link_libraries(your_project PRIVATE CPPUnitTest)
+```
+
+You can configure the following options with CMake:
+```cmake
+# Define compile definitions
+add_compile_definitions(CPPUNITTEST_MAX_THREADS=2)
+add_compile_definitions(EXCLUDED_GROUPS="Group1, Group2")
+add_compile_definitions(EXCLUDED_TESTS="Test1, Test2")
 ```
 
 ## Clang Compiler

@@ -177,6 +177,6 @@ export class TestManager {
 #else
     int max_concurrent_threads = std::numeric_limits<int>::max();
 #endif
-    int max_group_width = 1;
-    int max_test_width = 1;
+    int max_group_width = 0;
+    int max_test_width = 0;
 };
