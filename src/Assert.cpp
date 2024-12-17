@@ -1,12 +1,9 @@
 
 module;
-#include <sstream>
-#include <stdexcept>
-#include <string>
-#include <type_traits>
 export module CPPUnitTest:Assert;
 
-// Assertion functions
+import std;
+
 export void assert_true(bool condition,
                         const std::string &message = "Assertion failed: expected true") {
     if (!condition) {

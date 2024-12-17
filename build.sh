@@ -2,6 +2,7 @@
 # Set the build mode (Release or Debug, for example)
 BuildMode=${1:-Release} # Default to Release if no argument is provided
 
+export CXXFLAGS=-stdlib=libc++
 # Create the build directory
 mkdir -p ./build/${BuildMode}
 

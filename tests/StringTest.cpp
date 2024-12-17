@@ -1,4 +1,4 @@
-#include <string>
+import std;
 import CPPUnitTest;
 
 const static TestRegister test_string_equals("StringTest", "StringEquals", true, [] {

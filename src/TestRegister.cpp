@@ -1,12 +1,6 @@
 module;
-#include <algorithm>
-#include <functional>
-#include <source_location>
-#include <sstream>
-#include <string>
-#include <vector>
 export module CPPUnitTest:TestRegister;
-
+import std;
 import :TestManager;
 
 export class TestRegister {
