@@ -1,4 +1,4 @@
-#include <stdexcept>
+import std;
 import CPPUnitTest;
 
 const static TestRegister test_addition("PerformanceTest", "AdditionTest", true, [] {

@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.28)
+set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD 0e5b6991-d74f-4b3d-a41c-cf096e0b2508)
 project(CPPUnitTest VERSION 0.1.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_MODULE_STD 1)
 
 # Set C++ standards and compiler flags
 set(CMAKE_CXX_STANDARD 23)
