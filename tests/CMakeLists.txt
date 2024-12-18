@@ -3,7 +3,7 @@ project(${PROJECT_NAME})
 
 add_executable(tests
     MathTest.cpp
-    PerformanceTest.cpp
+    SetupTest.cpp
     StringTest.cpp
 )
 

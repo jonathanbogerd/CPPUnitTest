@@ -34,10 +34,10 @@ CPPUnitTest was built and tested with Clang 19.1.5 and libc++. libstdc++ is not 
 ## Writing Tests
 Creating a test is simple. Use the TestRegister class to register your tests with the framework.
 
-Here's an example of a performance test named "AdditionTest":
+Here's an example of a math test named "AdditionTest":
 ```cpp
 const static TestRegister test_addition(
-    "PerformanceTest",       // Group name
+    "MathTest",              // Group name
     "AdditionTest",          // Test name
     true,                    // Multithreaded execution
     [] {                     // Lambda containing the test logic
@@ -112,6 +112,22 @@ const static TestRegister test_group3(
     "ErrorHandling", "DivisionByZeroTest", true, [] { /* Test logic */ });
 ```
 
+# Setup
+CPPUnitTest enables you to reuse certain parts of a test setup, because of the lambdas. This can avoid duplication and improves maintainability.
+
+Example:
+
+```cpp
+import CPPUnitTest;
+constexpr int a = 2;
+constexpr int b = 5;
+
+const static TestRegister test_group1(
+    "MathOperations", "AdditionTest", true, [a = a, b = b] { /* Test logic, you can use the setup variables */ });
+
+const static TestRegister test_group2(
+    "MathOperations", "SubtractionTest", true, [a = a, b = b] { /* Test logic, you can use the setup variables */ });
+```
 # Example Project Structure
 Here's an example of a typical project structure using CPPUnitTest:
 
