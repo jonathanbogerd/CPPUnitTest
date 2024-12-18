@@ -28,8 +28,8 @@ add_compile_definitions(EXCLUDED_GROUPS="Group1, Group2")
 add_compile_definitions(EXCLUDED_TESTS="Test1, Test2")
 ```
 
-## Clang Compiler
-CPPUnitTest was built and tested with Clang 19.1.4. Due to differences in module implementation between the compilers, it will probably not work with GCC or MSVC.
+## Requirements
+CPPUnitTest was built and tested with Clang 19.1.5 and libc++. libstdc++ is not supported, as it does not allow for import std yet. Due to differences in module implementation between the compilers, this project will probably not compile with GCC or MSVC.
 
 ## Writing Tests
 Creating a test is simple. Use the TestRegister class to register your tests with the framework.
