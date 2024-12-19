@@ -96,6 +96,24 @@ export class TestManager {
         print_results(failed_tests, duration, total_tests, max_group_width, max_test_width);
     }
 
+    TestManager() = default;
+    ~TestManager() = default;
+
+    TestManager(const TestManager &) = delete;
+    TestManager &operator=(const TestManager &) = delete;
+
+  private:
+    std::map<TestName, std::function<void()>> st_tests;
+    std::map<TestName, std::function<void()>> mt_tests;
+    std::vector<TestName> failed_tests;
+#if CPPUNITTEST_MAX_THREADS
+    int max_concurrent_threads = CPPUNITTEST_MAX_THREADS;
+#else
+    int max_concurrent_threads = std::numeric_limits<int>::max();
+#endif
+    int max_group_width = 0;
+    int max_test_width = 0;
+
     void run_all_st_tests() {
         for (const auto &[name, test]: st_tests) {
             print_running_test(name, max_group_width, max_test_width);
@@ -152,22 +170,4 @@ export class TestManager {
         }
         failed_tests.insert(failed_tests.end(), mt_failed_tests.begin(), mt_failed_tests.end());
     }
-
-    TestManager() = default;
-    ~TestManager() = default;
-
-    TestManager(const TestManager &) = delete;
-    TestManager &operator=(const TestManager &) = delete;
-
-  private:
-    std::map<TestName, std::function<void()>> st_tests;
-    std::map<TestName, std::function<void()>> mt_tests;
-    std::vector<TestName> failed_tests;
-#if CPPUNITTEST_MAX_THREADS
-    int max_concurrent_threads = CPPUNITTEST_MAX_THREADS;
-#else
-    int max_concurrent_threads = std::numeric_limits<int>::max();
-#endif
-    int max_group_width = 0;
-    int max_test_width = 0;
 };

@@ -20,7 +20,6 @@ export void assert_false(bool condition,
 export template <typename T, typename U>
 void assert_eq(const T &expected, const U &actual, const std::string &message = "") {
     if (!(expected == actual)) { // Allow implicit comparison
-        // Use stringstreams for type-safe conversion to string
         std::ostringstream oss;
         if (message.empty()) {
             oss << "Assertion failed: expected " << expected << ", got " << actual;
@@ -34,7 +33,6 @@ void assert_eq(const T &expected, const U &actual, const std::string &message = 
 export template <typename T, typename U>
 void assert_ne(const T &expected, const U &actual, const std::string &message = "") {
     if (expected == actual) { // Allow implicit comparison
-        // Use stringstreams for type-safe conversion to string
         std::ostringstream oss;
         if (message.empty()) {
             oss << "Assertion failed: expected " << expected << ", got " << actual;
