@@ -76,11 +76,11 @@ The following assertions are available for your test logic:
   assert_false(a > b, "Condition is true");
   ```
 
-- **`assert_throws<ExceptionType>(lambda, message)`**  
+- **`assert_throw<ExceptionType>(lambda, message)`**  
   Ensures that the lambda throws the specified exception type.  
   **Example:**  
   ```cpp
-  assert_throws<std::runtime_error>(
+  assert_throw<std::runtime_error>(
     [] { throw std::runtime_error("Error"); },
     "Expected runtime_error was not thrown");
   ```

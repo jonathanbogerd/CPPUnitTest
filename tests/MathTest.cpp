@@ -11,7 +11,7 @@ const static TestRegister test_division("MathTest", "DivisionTest", true, [] {
     int a = 4;
     int b = 2;
     assert_eq(2, a / b, "Division test failed");
-    assert_ne(2, a / b, "Division test failed");
+    assert_ne(1, a / b, "Division test failed");
     assert_throw<std::runtime_error>([] { throw std::runtime_error("Error"); },
                                      "Exception not thrown as expected");
 });

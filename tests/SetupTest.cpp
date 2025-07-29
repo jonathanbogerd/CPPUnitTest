@@ -8,7 +8,7 @@ const static TestRegister test_addition("PerformanceTest", "AdditionTest", true,
 
 const static TestRegister test_division("PerformanceTest", "DivisionTest", true, [a = a, b = b] {
     assert_eq(1, a / b, "Division test failed");
-    assert_ne(1, a / b, "Division test failed");
+    assert_ne(2, a / b, "Division test failed");
     assert_throw<std::runtime_error>([] { throw std::runtime_error("Error"); },
                                      "Exception not thrown as expected");
 });
