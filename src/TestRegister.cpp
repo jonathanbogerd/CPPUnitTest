@@ -1,6 +1,9 @@
 module;
+#include <functional>
+#include <ranges>
+#include <source_location>
+#include <string>
 export module CPPUnitTest:TestRegister;
-import std;
 import :TestManager;
 
 export class TestRegister {

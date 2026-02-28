@@ -8,7 +8,7 @@ export import :TestRegister;
 
 import :TestManager;
 
-export int main() {
+export extern "C++" int main() {
 
     TestManager::instance().run_all_tests();
     return 0;

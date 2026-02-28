@@ -1,4 +1,4 @@
-import std;
+#include <stdexcept>
 import CPPUnitTest;
 constexpr int a = 2;
 constexpr int b = 2;

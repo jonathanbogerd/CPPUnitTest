@@ -1,6 +1,5 @@
-
+#include <stdexcept>
 import CPPUnitTest;
-import std;
 const static TestRegister test_addition("MathTest", "AdditionTest", true, [] {
     int a = 2;
     int b = 2;
