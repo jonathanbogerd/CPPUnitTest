@@ -17,7 +17,7 @@ add_compile_definitions(EXCLUDED_TESTS="")
 
 # Create the library
 add_library(CPPUnitTest)
-
+target_compile_features(CPPUnitTest PUBLIC cxx_std_23)
 target_sources(CPPUnitTest
   PUBLIC
     FILE_SET cxx_modules TYPE CXX_MODULES FILES
