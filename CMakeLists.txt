@@ -3,6 +3,8 @@ project(CPPUnitTest VERSION 0.1.0 LANGUAGES C CXX)
 
 
 # Set C++ standards and compiler flags
+set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API 2)
+set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -21,10 +23,14 @@ target_compile_features(CPPUnitTest PUBLIC cxx_std_23)
 target_sources(CPPUnitTest
   PUBLIC
     FILE_SET cxx_modules TYPE CXX_MODULES FILES
-    src/CPPUnitTest.cpp
-    src/TestManager.cpp
+      src/CPPUnitTest.cpp
+      src/TestManager.cppm
+      src/TestRegister.cppm
+      src/Assert.cppm
+  PRIVATE
     src/TestRegister.cpp
     src/Assert.cpp
+    src/TestManager.cpp
 )
 
 # Define install locations
