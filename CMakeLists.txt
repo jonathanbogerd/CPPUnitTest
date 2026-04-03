@@ -23,7 +23,7 @@ target_compile_features(CPPUnitTest PUBLIC cxx_std_23)
 target_sources(CPPUnitTest
   PUBLIC
     FILE_SET cxx_modules TYPE CXX_MODULES FILES
-      src/CPPUnitTest.cpp
+      src/CppUnitTest.cpp
       src/TestManager.cppm
       src/TestRegister.cppm
       src/Assert.cppm
